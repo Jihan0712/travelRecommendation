@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            margin-left: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-container button.search-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .search-container button.reset-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* Hero Section with Background Image */
+        .hero-section {
+            background-image: url('images/bg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: calc(100vh - 60px); /* Adjust for navbar height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Overlay for better text visibility */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Introduction and Results Container */
+        .content-container {
+            display: flex; /* Use flexbox to position items side by side */
+            justify-content: space-around; /* Add spacing between items */
+            align-items: center; /* Align items vertically */
+            max-width: 1200px; /* Limit the width for better responsiveness */
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+        }
+
+        .introduction {
+            max-width: 50%; /* Take up half the width */
+            padding: 20px;
+        }
+
+        .introduction h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .introduction p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Results Container Styling */
+        .results-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 50%; /* Take up half the width */
+        }
+
+        .result-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .result-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .result-card h3 {
+            margin: 10px 0;
+            color: black;
+            font-size: 18px;
+        }
+
+        .result-card p {
+            font-size: 14px;
+            color: #555;
+            padding: 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter keywords..." />
+            <button class="search-btn" onclick="performSearch()">Search</button>
+            <button class="reset-btn" onclick="resetResults()">Reset</button>
+        </div>
+    </div>
+
+    <!-- Hero Section with Background Image -->
+    <div class="hero-section">
+        <div class="overlay">
+            <!-- Content Container -->
+            <div class="content-container">
+                <!-- Introduction -->
+                <div class="introduction">
+                    <h1>Welcome to TravelBloom</h1>
+                    <p>
+                        Explore the world with us! Whether you're looking for serene beaches, historic temples, or vibrant cities, we've got you covered. Start your journey today!
+                    </p>
+                </div>
+
+                <!-- Search Results -->
+                <div class="results-container" id="resultsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="travel_recommendation.js"></script>
+</body>
+</html>
